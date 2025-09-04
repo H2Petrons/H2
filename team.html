@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H2petrons — Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{500:'#00C2C7'}}}}}</script>
+  <style>
+    body{background:#0B0F14;color:#F5F8FA}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10)}
+  </style>
+</head>
+<body class="antialiased">
+  <header class="sticky top-0 z-40 bg-black/60 backdrop-blur border-b border-white/10">
+    <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-wide">← H2petrons</a>
+      <a href="submit.html" class="px-4 py-2 rounded-xl bg-brand-500 text-black font-semibold">Join as Contributor</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-10">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <h1 class="text-3xl font-bold">Team</h1>
+      <div class="flex items-center gap-2">
+        <input id="search" class="px-3 py-2 rounded-lg bg-white/5 border border-white/10" placeholder="Search people…">
+        <select id="dept" class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">
+          <option value="">All</option>
+          <option>Engineering</option>
+          <option>Operations</option>
+          <option>Media</option>
+          <option>Advisors</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="grid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6"></div>
+  </main>
+
+  <script>
+    // EDIT this data to add/remove people
+    const PEOPLE = [
+      {name:"Hisham Mohammdieh", role:"CEO • Team Principal", dept:"Operations", img:"https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=400"},
+      {name:"A. Researcher", role:"Head of Aero", dept:"Engineering", img:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400"},
+      {name:"B. Engineer", role:"Head of Vehicle Dynamics", dept:"Engineering", img:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400"},
+      {name:"C. Analyst", role:"Data & Controls", dept:"Engineering", img:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400"},
+      {name:"D. Ops", role:"Garage & Logistics", dept:"Operations", img:"https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400"},
+      {name:"E. Media", role:"Content Producer", dept:"Media", img:"https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400"},
+      {name:"F. Advisor", role:"Technical Advisor", dept:"Advisors", img:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const search = document.getElementById('search');
+    const dept = document.getElementById('dept');
+
+    function render(){
+      const q = search.value.toLowerCase();
+      const d = dept.value;
+      grid.innerHTML = '';
+      PEOPLE
+        .filter(p => (!d || p.dept===d) && (p.name.toLowerCase().includes(q) || p.role.toLowerCase().includes(q)))
+        .forEach(p => {
+          const el = document.createElement('article');
+          el.className = 'card rounded-2xl overflow-hidden';
+          el.innerHTML = `
+            <img src="${p.img}" alt="${p.name}" class="h-40 w-full object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">${p.name}</h3>
+              <p class="text-sm text-neutral-300">${p.role}</p>
+              <span class="inline-block mt-2 text-xs px-2 py-1 rounded bg-white/10 border border-white/10">${p.dept}</span>
+            </div>`;
+          grid.appendChild(el);
+        });
+    }
+    search.addEventListener('input', render);
+    dept.addEventListener('change', render);
+    render();
+  </script>
+</body>
+</html>
