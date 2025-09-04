@@ -3,36 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>H2petrons</title>
-  <meta name="description" content="H2petrons — crowd-powered F1-grade engineering research. Open methods, real data, on-track ambition." />
+  <title>H2petrons — Crowd-Powered F1 Engineering</title>
+  <meta name="description" content="H2petrons — donor-driven open-wheel engineering: open methods, real data, and on-track ambition." />
 
   <!-- Tailwind (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    /* Tailwind theme extension (optional) */
     tailwind.config = {
-      theme: { extend: { colors: { brand: { 400: '#19f5c5', 500: '#00C2C7' } } } }
+      theme: {
+        extend: {
+          colors: { brand: { 400: '#19f5c5', 500: '#00C2C7' } },
+          boxShadow: { soft: '0 10px 30px -12px rgba(0,0,0,.35)' }
+        }
+      }
     }
   </script>
 
-  <!-- Favicon + brand CSS -->
+  <!-- Favicon + BRAND CSS variables -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <style>
     :root{
-      brand-primary:#00C2C7;  /* Hydrogen Teal */
-      brand-accent:#C6A045;   /* Honor Gold */
-      brand-ink:#F5F8FA;      /* Ink (text on dark) */
-      brand-bg:#0B0F14;       /* Midnight Slate (page bg) */
+      --brand-primary:#00C2C7;  /* Hydrogen Teal */
+      --brand-accent:#C6A045;   /* Honor Gold */
+      --brand-ink:#F5F8FA;      /* Ink (text on dark) */
+      --brand-bg:#0B0F14;       /* Midnight Slate */
     }
+    /* Helpers so Tailwind markup can pick up your brand vars */
     .bg-site{background-color:var(--brand-bg);}
-    .text-ink{color:var(brand-ink);}
-    .text-brand{color:var(brand-primary);}
-    .border-brand{border-color:var(brand-primary);}
-    .bg-brand-500{background-color:var(brand-primary)!important;}
-    .text-brand-400{color:var(brand-primary)!important;}
+    .text-ink{color:var(--brand-ink);}
+    .text-brand{color:var(--brand-primary);}
+    .border-brand{border-color:var(--brand-primary);}
+    .bg-brand-500{background-color:var(--brand-primary)!important;}
+    .text-brand-400{color:var(--brand-primary)!important;}
+    .ring-brand{--tw-ring-color:var(--brand-primary);}
   </style>
 
-  <!-- BRAND config (edit anytime) -->
+  <!-- EDIT IN ONE PLACE: branding + links -->
   <script>
     window.BRAND = {
       name: "H2petrons",
@@ -52,13 +58,15 @@
 </head>
 
 <body class="bg-site text-ink antialiased">
-  <!-- Header / Nav -->
+  <!-- Header / Navigation -->
   <header class="sticky top-0 z-50 bg-neutral-950/75 backdrop-blur border-b border-white/10">
     <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <img id="brandLogo" src="monogram_teal.svg" alt="H2petrons logo" class="h-8 w-8" />
         <span id="brandWordmark" class="font-semibold tracking-wide">H2petrons</span>
       </a>
+
+      <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="plans.html" class="hover:text-brand">Plans</a>
@@ -66,24 +74,44 @@
         <a href="submit.html" class="hover:text-brand">Submit Research</a>
         <a href="approved.html" class="hover:text-brand">Approved</a>
         <a href="contact.html" class="hover:text-brand">Contact</a>
+        <!-- Optional link back to your multi-project page -->
+        <a href="https://h2petrons.github.io/H2/" class="hidden lg:inline hover:text-brand">Main Page</a>
       </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10 hover:bg-white/10" aria-label="Toggle menu">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+        <a href="about.html" class="py-2 hover:text-brand">About</a>
+        <a href="plans.html" class="py-2 hover:text-brand">Plans</a>
+        <a href="tools.html" class="py-2 hover:text-brand">Tools</a>
+        <a href="submit.html" class="py-2 hover:text-brand">Submit Research</a>
+        <a href="approved.html" class="py-2 hover:text-brand">Approved</a>
+        <a href="contact.html" class="py-2 hover:text-brand">Contact</a>
+        <a href="https://h2petrons.github.io/H2/" class="py-2 hover:text-brand">Main Page</a>
+      </div>
+    </div>
   </header>
 
   <!-- Hero -->
   <main>
-    <section class="mx-auto max-w-7xl px-4 pt-14 pb-16 text-center">
-      <h1 class="text-4xl md:text-6xl font-black">
+    <section class="mx-auto max-w-7xl px-4 pt-16 pb-14 text-center">
+      <h1 class="text-4xl md:text-6xl font-black leading-tight">
         Crowd-Powered <span class="text-brand">F1-Grade</span> Engineering
       </h1>
       <p id="brandTagline" class="mt-4 text-lg text-neutral-300">
         From Ions to Instant
       </p>
 
-      <!-- Primary CTAs (Submit next to About Us) -->
+      <!-- CTAs (Submit next to About Us) -->
       <div class="mt-6 flex flex-wrap gap-4 justify-center">
-        <a href="about.html" class="px-6 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold">About Us</a>
-        <a href="submit.html" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-neutral-900 font-semibold">Submit Research</a>
+        <a href="about.html" class="px-6 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold shadow-soft">About Us</a>
+        <a href="submit.html" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-neutral-900 font-semibold shadow-soft">Submit Research</a>
         <a href="plans.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Our Plans</a>
         <a href="tools.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Tools</a>
         <a href="approved.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Approved</a>
@@ -91,36 +119,36 @@
       </div>
     </section>
 
-    <!-- Quick highlights -->
-    <section class="mx-auto max-w-7xl px-4 pb-16 grid md:grid-cols-3 gap-6">
+    <!-- Three highlights -->
+    <section class="mx-auto max-w-7xl px-4 pb-14 grid md:grid-cols-3 gap-6">
       <div class="p-5 rounded-2xl border border-white/10">
         <h3 class="font-semibold">Open Methods</h3>
-        <p class="mt-2 text-neutral-300 text-sm">CFD/FEA setups, validation rigs, and docs released whenever possible.</p>
+        <p class="mt-2 text-neutral-300 text-sm">CFD/FEA pipelines, validation rigs, and docs released wherever possible.</p>
       </div>
       <div class="p-5 rounded-2xl border border-white/10">
         <h3 class="font-semibold">Community-Funded</h3>
-        <p class="mt-2 text-neutral-300 text-sm">Transparent donor program and fiscal sponsorship for compliant funding.</p>
+        <p class="mt-2 text-neutral-300 text-sm">Transparent donor program + fiscal sponsorship for compliant funding.</p>
       </div>
       <div class="p-5 rounded-2xl border border-white/10">
         <h3 class="font-semibold">On-Track Ambition</h3>
-        <p class="mt-2 text-neutral-300 text-sm">Roadmap toward real testing, from bench to open-wheel competition.</p>
+        <p class="mt-2 text-neutral-300 text-sm">Roadmap from bench results to real testing in open-wheel series.</p>
       </div>
     </section>
 
-    <!-- Link cards -->
+    <!-- Feature cards -->
     <section class="mx-auto max-w-7xl px-4 pb-20 grid md:grid-cols-2 gap-6">
-      <a href="approved.html" class="p-6 rounded-2xl border border-white/10 hover:bg-white/5">
+      <a href="approved.html" class="p-6 rounded-2xl border border-white/10 hover:bg-white/5 transition">
         <h4 class="font-semibold">See Approved Research →</h4>
-        <p class="mt-2 text-neutral-300 text-sm">Reviewed, high-quality submissions you can read and download.</p>
+        <p class="mt-2 text-neutral-300 text-sm">Reviewed submissions with PDFs, data, and notes.</p>
       </a>
-      <a href="submit.html" class="p-6 rounded-2xl border border-white/10 hover:bg-white/5">
+      <a href="submit.html" class="p-6 rounded-2xl border border-white/10 hover:bg-white/5 transition">
         <h4 class="font-semibold">Submit Your Work →</h4>
-        <p class="mt-2 text-neutral-300 text-sm">Upload PDFs/data; we review before publishing to the site.</p>
+        <p class="mt-2 text-neutral-300 text-sm">Upload your paper/data. We review before publishing.</p>
       </a>
     </section>
   </main>
 
-  <!-- Footer with editable links -->
+  <!-- Footer (inline SVG icons + editable links) -->
   <footer class="pt-8 pb-10 border-t border-white/10">
     <div class="mx-auto max-w-7xl px-4 flex items-center justify-between gap-4">
       <p class="text-sm text-neutral-400">© <span id="year"></span> <span id="brandName">H2petrons</span></p>
@@ -160,12 +188,12 @@
     </div>
   </footer>
 
-  <!-- Apply BRAND config -->
+  <!-- Apply BRAND config + small JS -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    // Apply brand variables + text + links
+    (function () {
       const B = window.BRAND || {};
       const R = document.documentElement.style;
-
       if (B.colors){
         R.setProperty('--brand-primary', B.colors.primary);
         R.setProperty('--brand-accent',  B.colors.accent);
@@ -185,7 +213,15 @@
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();
-    });
+    })();
+
+    // Mobile menu toggle
+    (function () {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    })();
   </script>
 </body>
 </html>
