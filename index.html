@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HMX Racing Lab — Crowd-Powered F1-Grade Engineering</title>
+  <meta name="description" content="Crowd-powered open-wheel R&D. Open methods, real data, on-track ambition."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: { 500: '#00d6ac', 400:'#19f5c5' } } } } }
+  </script>
+  <style>.noise{position:fixed;inset:0;pointer-events:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" opacity=\"0.08\" width=\"100%\" height=\"100%\"><filter id=\"n\"><feTurbulence baseFrequency=\"0.8\" numOctaves=\"2\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23n)\"/></svg>');}</style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+  <div class="noise"></div>
+  <header class="sticky top-0 z-50 backdrop-blur">
+    <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-semibold tracking-wide">HMX Racing Lab</a>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#mission" class="hover:text-brand-400">Mission</a>
+        <a href="#roadmap" class="hover:text-brand-400">Roadmap</a>
+        <a href="#donate" class="hover:text-brand-400">Donate</a>
+      </div>
+      <a href="#donate" class="px-4 py-2 rounded-xl bg-brand-500/90 hover:bg-brand-400 text-neutral-900 font-semibold">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-7xl px-4 pt-14 pb-20">
+      <h1 class="text-4xl md:text-6xl font-black">Crowd‑Powered <span class="text-brand-400">F1‑Grade</span> Engineering</h1>
+      <p class="mt-5 text-neutral-300 text-lg">Help build the world’s most transparent open‑wheel R&D lab.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://www.h2petreon.org/donate" class="px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-neutral-900 font-semibold">Donate via Sponsor</a>
+        <a href="https://discord.h2petreon.org" class="px-5 py-3 rounded-xl border border-white/20 hover:bg-white/5">Join Discord</a>
+      </div>
+    </section>
+
+    <section id="mission" class="py-10 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Mission</h2>
+        <p class="mt-3 text-neutral-300">Publish rigorous, replicable engineering—open where possible, protected where it creates on‑track advantage.</p>
+      </div>
+    </section>
+
+    <section id="roadmap" class="py-10 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Roadmap (Year 1)</h2>
+        <ul class="mt-4 grid md:grid-cols-2 gap-3 text-sm text-neutral-300">
+          <li>• M1: Launch & Donor Page</li>
+          <li>• M2: Explainer + White Paper #1</li>
+          <li>• M3: Open Aero Pack v1</li>
+          <li>• M6: Scale Correlation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="donate" class="py-10 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Fuel the Lab</h2>
+        <p class="mt-2 text-neutral-300">Donations are processed by our fiscal sponsor; you’ll receive a tax receipt. Funds are restricted to this research project.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="px-5 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold hover:bg-brand-400" href="https://www.h2petreon.org/donate" target="_blank" rel="noopener">Donate via Sponsor</a>
+          <a class="px-5 py-3 rounded-xl border border-white/20 hover:bg-white/5" href="https://opencollective.com/h2petreon" target="_blank" rel="noopener">Open Collective</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pt-8 pb-10 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 flex items-center justify-between text-sm">
+      <p class="text-neutral-400">© {now} HMX Racing Lab</p>
+      <p class="text-neutral-500">Docs CC BY 4.0 • Code Apache‑2.0 • Data CC BY 4.0</p>
+    </div>
+  </footer>
+</body>
+</html>
