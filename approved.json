@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Ground-Effect Rake Sweep Study",
+    "authors": "A. Researcher, B. Engineer",
+    "date": "2025-09-03",
+    "abstract": "Baseline CFD meshes, solver settings, and rake/ride-height map for an open-wheel underfloor.",
+    "files": [
+      {
+        "label": "Paper (PDF)",
+        "url": "https://example.com/your-upload-link.pdf"
+      },
+      {
+        "label": "Data (ZIP)",
+        "url": "https://example.com/your-upload-link.zip"
+      }
+    ]
+  },
+  {
+    "title": "Brake Cooling Rig: Bench Results",
+    "authors": "C. Analyst",
+    "date": "2025-08-15",
+    "abstract": "Instrumentation chain and first temperature/time-series for duct concepts.",
+    "files": [
+      {
+        "label": "Report (PDF)",
+        "url": "https://example.com/another-upload.pdf"
+      }
+    ]
+  }
+]

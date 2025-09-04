@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Approved Research — H2petrons</title>
+  <meta name="description" content="Reviewed and approved research submissions." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{400:'#19f5c5',500:'#00d6ac'}}}}}</script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 antialiased">
+  <header class="bg-neutral-950 border-b border-white/10">
+    <nav class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold">← Back to Home</a>
+      <a href="submit.html" class="text-sm hover:text-brand-400">Submit Research</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    <h1 class="text-3xl font-bold">Approved Research</h1>
+    <p class="mt-2 text-neutral-300">These submissions have been reviewed and accepted.</p>
+
+    <div id="list" class="mt-8 grid md:grid-cols-2 gap-6"></div>
+
+    <template id="card">
+      <article class="p-5 rounded-2xl border border-white/10">
+        <h3 class="text-lg font-semibold"></h3>
+        <p class="mt-1 text-sm text-neutral-400"></p>
+        <p class="mt-3 text-sm text-neutral-300"></p>
+        <div class="mt-4 flex flex-wrap gap-2"></div>
+      </article>
+    </template>
+  </main>
+
+  <footer class="py-8 border-t border-white/10 text-center text-neutral-400">
+    <p>© H2petrons</p>
+  </footer>
+
+  <script>
+    async function loadApproved() {{
+      try {{
+        const res = await fetch('approved.json', {{ cache: 'no-store' }});
+        const items = await res.json();
+        const list = document.getElementById('list');
+        const tpl = document.getElementById('card');
+
+        if (!Array.isArray(items) || items.length === 0) {{
+          list.innerHTML = '<p class="text-neutral-400">No approved items yet. Check back soon.</p>';
+          return;
+        }}
+
+        items.forEach(item => {{
+          const node = tpl.content.cloneNode(true);
+          node.querySelector('h3').textContent = item.title || 'Untitled';
+          node.querySelector('p:nth-of-type(1)').textContent = (item.authors ? 'By ' + item.authors : '') + (item.date ? ' • ' + item.date : '');
+          node.querySelector('p:nth-of-type(2)').textContent = item.abstract || '';
+
+          const linksWrap = node.querySelector('div');
+          (item.files || []).forEach(f => {{
+            const a = document.createElement('a');
+            a.href = f.url;
+            a.textContent = f.label || 'Download';
+            a.className = 'px-3 py-1.5 rounded-lg border border-white/15 hover:bg-white/10 text-sm';
+            a.target = '_blank'; a.rel = 'noopener';
+            linksWrap.appendChild(a);
+          }});
+
+          list.appendChild(node);
+        }});
+      }} catch (e) {{
+        document.getElementById('list').innerHTML = '<p class="text-red-300">Failed to load approved list.</p>';
+      }}
+    }}
+    loadApproved();
+  </script>
+</body>
+</html>
