@@ -13,24 +13,71 @@
     }
   </script>
 </head>
+  <!-- BRAND: colors mapped to CSS variables so you can change once -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+  :root{
+    --brand-primary:#00C2C7;   /* Hydrogen Teal */
+    --brand-accent:#C6A045;    /* Honor Gold */
+    --brand-ink:#F5F8FA;       /* Ink (text on dark) */
+    --brand-bg:#0B0F14;        /* Midnight Slate (page bg) */
+  }
+  /* Helpers to use brand vars (works with your Tailwind markup) */
+  .bg-site{background-color:var(--brand-bg);}
+  .text-ink{color:var(--brand-ink);}
+  .text-brand{color:var(--brand-primary);}
+  .border-brand{border-color:var(--brand-primary);}
+  .bg-brand-500{background-color:var(--brand-primary) !important;}
+  .text-brand-400{color:var(--brand-primary) !important;}
+</style>
+
+<!-- EDIT HERE ONLY: Brand config -->
+<script>
+  window.BRAND = {
+    name: "H2petrons",
+    tagline: "From Ions to Instant",
+    colors: {
+      primary: "#00C2C7",   // Hydrogen Teal
+      accent:  "#C6A045",   // Honor Gold
+      ink:     "#F5F8FA",   // Arctic White
+      bg:      "#0B0F14"    // Midnight Slate
+    },
+    assets: {
+      logo:    "monogram_teal.svg",         // from your logo pack
+      favicon: "favicon.svg",               // from your logo pack
+      lockup:  "lockup_horizontal_teal.svg" // optional
+    },
+    socials: {
+      x:        "https://x.com/yourhandle",
+      instagram:"https://instagram.com/yourhandle",
+      linkedin: "https://www.linkedin.com/company/yourcompany",
+      youtube:  "https://youtube.com/@yourchannel",
+      github:   "https://github.com/yourorg",
+      discord:  "https://discord.gg/yourinvite"
+    }
+  };
+</script>
 <body class="bg-neutral-900 text-neutral-100 antialiased">
 
 <!-- EDIT GUIDE: Nav Bar -->
-<header class="bg-neutral-950 text-neutral-100">
+<header class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur">
+  <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <!-- BRAND: logo + wordmark -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img id="brandLogo" src="monogram_teal.svg" alt="H2petrons logo" class="h-8 w-8" />
+      <span id="brandWordmark" class="font-semibold tracking-wide">H2petrons</span>
+    </a>
 
-  <nav class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-    <!-- EDIT: Brand / Site name text -->
-    <a href="index.html" class="text-lg font-bold tracking-wide">H2petrons</a>
-    <div class="mt-6 flex flex-wrap gap-4 justify-center">
-  <a href="about.html" class="px-6 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold">About Us</a>
-  <a href="submit.html" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-neutral-900 font-semibold">Submit Research</a>
-  <a href="plans.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Our Plans</a>
-  <a href="tools.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Tools</a>
-  <a href="contact.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Contact</a>
-</div>
-
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="about.html" class="hover:text-brand">About</a>
+      <a href="plans.html" class="hover:text-brand">Plans</a>
+      <a href="tools.html" class="hover:text-brand">Tools</a>
+      <a href="submit.html" class="hover:text-brand">Submit Research</a>
+      <a href="contact.html" class="hover:text-brand">Contact</a>
+    </div>
   </nav>
 </header>
+
 
   <main class="mx-auto max-w-5xl px-4 py-12">
     
@@ -62,6 +109,9 @@
   <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
     <!-- EDIT: Copyright / name -->
     <p>© 2025 H2petrons. All rights reserved.</p>
+  <p id="brandTagline" class="mt-4 text-lg text-neutral-300">
+  From Ions to Instant
+  </p>
 
     <!-- EDIT: Replace each href with your real profile URLs -->
     <div class="flex items-center gap-4">
