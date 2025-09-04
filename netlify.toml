@@ -1,7 +1,0 @@
-[build]
-  publish = "."  # static site at repo root
-[[redirects]]
-  from = "https://h2petreon.netlify.app/*"
-  to = "https://www.h2petreon.org/:splat"
-  status = 301
-  force = true
