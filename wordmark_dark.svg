@@ -1,0 +1,8 @@
+<svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .w1 { font: 800 110px/1 'Poppins','Inter','Segoe UI',Arial,sans-serif; letter-spacing: 2px; fill: #F5F8FA; }
+    .w2 { font: 500 28px/1 'Poppins','Inter','Segoe UI',Arial,sans-serif; letter-spacing: 6px; fill: #F5F8FA; opacity:.9; }
+  </style>
+  <text x="0" y="120" class="w1">H2 PETRONS</text>
+  <text x="0" y="200" class="w2">FROM IONS TO INSTANT</text>
+</svg>

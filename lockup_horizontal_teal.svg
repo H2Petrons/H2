@@ -1,0 +1,13 @@
+<svg viewBox="0 0 1500 400" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, -4) scale(0.75)">
+  
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#00C2C7" stroke-width="28"/</g>
+  <g transform="translate(450,40)">
+    <style>
+      .w1 { font: 800 150px/1 'Poppins','Inter','Segoe UI',Arial,sans-serif; letter-spacing: 3px; fill: #00C2C7; }
+      .w2 { font: 500 38px/1 'Poppins','Inter','Segoe UI',Arial,sans-serif; letter-spacing: 8px; fill: #00C2C7; opacity:.9; }
+    </style>
+    <text x="0" y="140" class="w1">H2 PETRONS</text>
+    <text x="0" y="210" class="w2">FROM IONS TO INSTANT</text>
+  </g>
+</svg>
