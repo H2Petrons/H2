@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- EDIT: Page title -->Tools - H2petrons</title>
+  <!-- TailwindCSS via CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // EDIT: Colors - change brand 400/500 to your preferred hex values
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { 400:'#19f5c5', 500:'#00d6ac' } } } }
+    }
+  </script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 antialiased">
+  
+<!-- EDIT GUIDE: Nav Bar -->
+<header class="bg-neutral-950 text-neutral-100">
+  <nav class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+    <!-- EDIT: Brand / Site name text -->
+    <a href="index.html" class="text-lg font-bold tracking-wide">H2petrons</a>
+    <div class="flex gap-6 text-sm">
+      <!-- EDIT: Nav links - change text/href or remove items as needed -->
+      <a href="about.html" class="hover:text-brand-400">About</a>
+      <a href="plans.html" class="hover:text-brand-400">Plans</a>
+      <a href="tools.html" class="hover:text-brand-400">Tools</a>
+      <a href="contact.html" class="hover:text-brand-400">Contact</a>
+      <!-- EDIT: Back to main multi-repo page (remove if you don't want it visible) -->
+      <a href="https://h2petrons.github.io/H2/" class="hover:text-brand-400">Main Page</a>
+    </div>
+  </nav>
+</header>
+
+  <main class="mx-auto max-w-5xl px-4 py-12">
+    
+<!-- EDIT GUIDE: Tools & Infrastructure -->
+<h2 class="text-3xl font-bold mb-4">Tools & Infrastructure</h2>
+<p class="text-neutral-300 mb-4">Edit the list below to reflect your current stack.</p>
+<ul class="list-disc pl-6 space-y-2 text-neutral-300">
+  <!-- EDIT: List your CAD tools -->
+  <li>CAD — Onshape, Fusion, SolidWorks</li>
+  <!-- EDIT: List your CFD/visualization tools -->
+  <li>CFD — OpenFOAM, SU2 • Visualization — ParaView</li>
+  <!-- EDIT: FEA tools -->
+  <li>FEA — CalculiX, Code_Aster</li>
+  <!-- EDIT: Collaboration -->
+  <li>Collaboration — GitHub, Slack, Notion</li>
+  <!-- EDIT: Cloud compute -->
+  <li>Cloud — AWS, Google Cloud, Microsoft Azure credits</li>
+</ul>
+
+<!-- EDIT: Add links or badges to your repos/tools if desired -->
+<!-- <a href="https://github.com/h2petrons" class="underline">Our GitHub</a> -->
+
+  </main>
+  
+<!-- EDIT GUIDE: Footer & Socials -->
+<footer class="bg-neutral-950 text-neutral-400 border-t border-white/10 py-8 mt-8">
+  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- EDIT: Copyright owner/name -->
+    <p>© 2025 H2petrons. All rights reserved.</p>
+    <div class="flex gap-4 text-neutral-300">
+      <!-- EDIT: Replace # with your real social profile URLs -->
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

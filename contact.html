@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- EDIT: Page title -->Contact - H2petrons</title>
+  <!-- TailwindCSS via CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // EDIT: Colors - change brand 400/500 to your preferred hex values
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { 400:'#19f5c5', 500:'#00d6ac' } } } }
+    }
+  </script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 antialiased">
+  
+<!-- EDIT GUIDE: Nav Bar -->
+<header class="bg-neutral-950 text-neutral-100">
+  <nav class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+    <!-- EDIT: Brand / Site name text -->
+    <a href="index.html" class="text-lg font-bold tracking-wide">H2petrons</a>
+    <div class="flex gap-6 text-sm">
+      <!-- EDIT: Nav links - change text/href or remove items as needed -->
+      <a href="about.html" class="hover:text-brand-400">About</a>
+      <a href="plans.html" class="hover:text-brand-400">Plans</a>
+      <a href="tools.html" class="hover:text-brand-400">Tools</a>
+      <a href="contact.html" class="hover:text-brand-400">Contact</a>
+      <!-- EDIT: Back to main multi-repo page (remove if you don't want it visible) -->
+      <a href="https://h2petrons.github.io/H2/" class="hover:text-brand-400">Main Page</a>
+    </div>
+  </nav>
+</header>
+
+  <main class="mx-auto max-w-5xl px-4 py-12">
+    
+<!-- EDIT GUIDE: Contact page -->
+<h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+<p class="text-neutral-300 mb-4">Replace this text with how you want people to reach you (email, Discord, forms).</p>
+
+<!-- EDIT: Form action wiring
+     - For **Formspree**: set action="https://formspree.io/f/yourFormID" and method="POST"
+     - For **Netlify Forms**: keep action="#" and add netlify attributes to the form tag (see comment below) -->
+<form class="grid gap-4 max-w-md" action="#" method="post" <!-- netlify -->>
+  <!-- EDIT: Input labels/placeholder -->
+  <input type="text" name="name" placeholder="Your Name" class="px-4 py-3 rounded-xl bg-white/5 border border-white/10" required/>
+  <input type="email" name="email" placeholder="Your Email" class="px-4 py-3 rounded-xl bg-white/5 border border-white/10" required/>
+  <textarea name="message" rows="5" placeholder="Your Message" class="px-4 py-3 rounded-xl bg-white/5 border border-white/10" required></textarea>
+  <!-- EDIT: Button text -->
+  <button class="px-6 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold">Send Message</button>
+</form>
+
+<!-- EDIT: Add direct email / Discord invite links if you prefer -->
+<!-- <p class="mt-4">Email: <a class="underline" href="mailto:hello@yourdomain.org">hello@yourdomain.org</a></p> -->
+<!-- <p class="mt-1">Discord: <a class="underline" href="https://discord.gg/yourinvite" target="_blank">Join our server</a></p> -->
+
+<p class="mt-4 text-sm text-neutral-400">Tip: Connect this form to Formspree or Netlify Forms for free email forwarding.</p>
+
+  </main>
+  
+<!-- EDIT GUIDE: Footer & Socials -->
+<footer class="bg-neutral-950 text-neutral-400 border-t border-white/10 py-8 mt-8">
+  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- EDIT: Copyright owner/name -->
+    <p>© 2025 H2petrons. All rights reserved.</p>
+    <div class="flex gap-4 text-neutral-300">
+      <!-- EDIT: Replace # with your real social profile URLs -->
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

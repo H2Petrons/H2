@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- EDIT: Page title -->Home - H2petrons</title>
+  <!-- TailwindCSS via CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // EDIT: Colors - change brand 400/500 to your preferred hex values
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { 400:'#19f5c5', 500:'#00d6ac' } } } }
+    }
+  </script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 antialiased">
+  
+<!-- EDIT GUIDE: Nav Bar -->
+<header class="bg-neutral-950 text-neutral-100">
+  <nav class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+    <!-- EDIT: Brand / Site name text -->
+    <a href="index.html" class="text-lg font-bold tracking-wide">H2petrons</a>
+    <div class="flex gap-6 text-sm">
+      <!-- EDIT: Nav links - change text/href or remove items as needed -->
+      <a href="about.html" class="hover:text-brand-400">About</a>
+      <a href="plans.html" class="hover:text-brand-400">Plans</a>
+      <a href="tools.html" class="hover:text-brand-400">Tools</a>
+      <a href="contact.html" class="hover:text-brand-400">Contact</a>
+      <!-- EDIT: Back to main multi-repo page (remove if you don't want it visible) -->
+      <a href="https://h2petrons.github.io/H2/" class="hover:text-brand-400">Main Page</a>
+    </div>
+  </nav>
+</header>
+
+  <main class="mx-auto max-w-5xl px-4 py-12">
+    
+<!-- EDIT GUIDE: Home / Hero -->
+<section class="text-center">
+  <!-- EDIT: Main headline -->
+  <h1 class="text-4xl md:text-6xl font-black">Welcome to <span class="text-brand-400">H2petrons</span></h1>
+  <!-- EDIT: Subheadline / tagline -->
+  <p class="mt-4 text-lg text-neutral-300">Crowd-powered F1-grade engineering research project. Open methods, real data, and ambitious plans.</p>
+  <div class="mt-6 flex flex-wrap gap-4 justify-center">
+    <!-- EDIT: Primary CTAs - change labels/links as needed -->
+    <a href="about.html" class="px-6 py-3 rounded-xl bg-brand-500 text-neutral-900 font-semibold">About Us</a>
+    <a href="plans.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Our Plans</a>
+    <a href="tools.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Tools</a>
+    <a href="contact.html" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10">Contact</a>
+  </div>
+  <!-- EDIT: Add any hero image here (replace src) -->
+  <!-- <img class="mt-10 mx-auto rounded-xl" src="your-image-url.jpg" alt="Your hero image" /> -->
+</section>
+
+  </main>
+  
+<!-- EDIT GUIDE: Footer & Socials -->
+<footer class="bg-neutral-950 text-neutral-400 border-t border-white/10 py-8 mt-8">
+  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- EDIT: Copyright owner/name -->
+    <p>© 2025 H2petrons. All rights reserved.</p>
+    <div class="flex gap-4 text-neutral-300">
+      <!-- EDIT: Replace # with your real social profile URLs -->
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
